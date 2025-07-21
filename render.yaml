@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: realtime-chat-backend
+    env: node
+    rootDirectory: backend
+    buildCommand: pnpm install
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.x
+
+  - type: web
+    name: realtime-chat-frontend
+    env: static
+    rootDirectory: frontend
+    buildCommand: pnpm install && pnpm build
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.x
